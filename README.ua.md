@@ -1,5 +1,14 @@
 **Читать на других языках: [Русский](README.md), [Українська](README.ua.md).**
 
+# Критерии приема
+
+## Книга контактов
+
+- Создан репозиторий `goit-react-hw-04-hooks-phonebook`.
+- Проведи рефакторинг кода задания
+  [Телефонна книга](https://github.com/vovababych/goit-react-hw-03-phonebook)
+  используя React-хуки.
+
 # Критерії прийому
 
 - Створено репозиторії `goit-react-hw-03-phonebook` і
