@@ -1,11 +1,25 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
+import useLocalStorage from './hooks/useLocalStorage';
 
 import Phonebook from './components/Phonebook';
 import ContactForm from './components/ContactForm';
 import Contacts from './components/Contacts';
 
 function App() {
-  const [contacts, setContacts] = useState([]);
+  // const [contacts, setContacts] = useState([]);
+  //
+  // useEffect(() => {
+  //    const readContacts = JSON.parse(localStorage.getItem('contacts'));
+  //    if (readContacts) {
+  //      setContacts(readContacts);
+  //    }
+  //  }, []);
+
+  //  useEffect(() => {
+  //    window.localStorage.setItem('contacts', JSON.stringify(contacts));
+  //  }, [contacts]);
+
+  const [contacts, setContacts] = useLocalStorage('contacts', []);
 
   const handleAddContact = newContact => {
     setContacts(prevState => [...prevState, newContact]);
@@ -25,17 +39,6 @@ function App() {
   const handleDeleteContact = id => {
     setContacts(contacts.filter(contact => contact.id !== id));
   };
-
-  useEffect(() => {
-    const readContacts = JSON.parse(localStorage.getItem('contacts'));
-    if (readContacts) {
-      setContacts(readContacts);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
 
   return (
     <Phonebook title="Phonebook">
